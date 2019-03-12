@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+      <form [formGroup]="userForm" (ngSubmit)="addUser(userForm.value)">
+        <div>
+          <label>
+            Name*:
+          </label>
+          <input type="text" formControlName="userName"/>
+        </div>
+        <div>
+          <label>
+            Email*:
+          </label>
+          <input type="email" formControlName="userEmail"/>
+        </div>
+        <div>
+          <label>
+            Mobile:
+          </label>
+          <input type="text" formControlName="userMobile"/>
+        </div>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+      <label class="p2">Refr Users</label><br>
+      <span *ngIf="!hideSpinner" class="spinner spinner-inline">
+        Loading...
+      </span>
+      <div *ngFor="let user of refrUsersList | async">
+        <label class="p4">{{user.userName}} | {{user.userEmail}}</label>
+      </div>
+    </div>
+  </div>
+</div>

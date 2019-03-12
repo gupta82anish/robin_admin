@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+      <h3>Candidates Applications from Refr</h3>
+      <clr-datagrid>
+      <clr-dg-placeholder>You don't have any referrals yet!</clr-dg-placeholder>
+      <clr-dg-column>Name</clr-dg-column>
+      <clr-dg-column>Position</clr-dg-column>
+      <clr-dg-column>Status</clr-dg-column>
+      <clr-dg-column></clr-dg-column>
+      <clr-dg-row *clrDgItems="let application of applicationList | async">
+        <clr-dg-cell>{{application.name}}</clr-dg-cell>
+        <clr-dg-cell>{{application.position}}</clr-dg-cell>
+        <clr-dg-cell>{{application.status}}</clr-dg-cell>
+        <clr-dg-cell>
+          <button type="button" class="btn btn-sm btn-icon" (click)="downloadResume(application.resume)">
+            <clr-icon shape="download"></clr-icon>
+          </button>
+        </clr-dg-cell>
+        <clr-dg-row-detail *clrIfExpanded [clrDgReplace]="true">
+          <div class="card">
+            <div class="card-header">
+              {{application.name}}
+            </div>
+            <div class="card-block">
+              <div class="card-text">
+
+                <div>
+                  <span class="p4">Email: </span><label class="p3">{{application.email}}</label>
+                </div>
+
+                <div>
+                  <span class="p4">Position: </span><label class="p3">{{application.position}}</label>
+                </div>
+                <div>
+                  <span class="p4">Company: </span><label class="p3">{{application.companyname}}</label>
+                </div>
+                <div>
+                  <span class="p4">Location: </span><label class="p3">{{application.location}}</label>
+                </div>
+
+                <div>
+                  <span class="p4">Status: </span><label class="p3">{{application.status}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </clr-dg-row-detail>
+      </clr-dg-row>
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+              {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+              of {{pagination.totalItems}} Applications
+        </clr-dg-pagination>
+      </clr-dg-footer>
+      </clr-datagrid>
+      <button class="btn btn-primary btn-sm" (click)="downloadExcel()">Download As Excel Sheet</button>
+    </div>
+  </div>
+</div>

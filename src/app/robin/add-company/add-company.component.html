@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="right">
+    <h2> ADD COMPANY </h2>
+    <form [formGroup]="companyForm" (ngSubmit)="addCompanyForm(companyForm.value)">
+      <div>
+        <label>
+          Name*:
+        </label>
+        <input type="text" formControlName="companyName"/>
+      </div>
+      <div>
+        <label>
+          Contact Name*:
+        </label>
+        <input type="text" formControlName="contactName"/>
+      </div>
+      <div>
+        <label>
+          Contact Email*:
+        </label>
+        <input type="email" formControlName="contactEmail"/>
+      </div>
+      <div>
+        <label>
+          Contact Number*:
+        </label>
+        <input type="text" formControlName="contactNumber"/>
+      </div>
+      <div>
+        <label>
+          Company Type* :
+        </label>
+        <select formControlName="companyType">
+          <option>
+            agency
+          </option>
+          <option>
+            emp
+          </option>
+        </select>
+      </div>
+      <button>Save</button>
+    </form>
+  </div>
+</div>

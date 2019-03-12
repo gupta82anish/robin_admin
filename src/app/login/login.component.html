@@ -1,0 +1,16 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <label class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Reqruto Admin
+        </label>
+        <div class="login-group">
+            <input class="username" formControlName="email" type="text" id="login_username" placeholder="Email">
+            <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
+            <div *ngIf="wrongpassword" class="error active">
+                Invalid email id or password
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>

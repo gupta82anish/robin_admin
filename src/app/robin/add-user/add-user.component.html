@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="left">
+    <h2>ADD USER </h2>
+    <form [formGroup]="userForm" (ngSubmit)="addUserForm(userForm.value)">
+      <div>
+        <label>
+          Email*:
+        </label>
+        <input type="email" formControlName="userEmail"/>
+      </div>
+      <div>
+        <label>
+          Name*:
+        </label>
+        <input type="text" formControlName="userName"/>
+      </div>
+      <div>
+        <label>
+          Mobile:
+        </label>
+        <input type="text" formControlName="userMobile"/>
+      </div>
+      <div>
+        <label>Role*:</label><br/>
+        <select formControlName="userRole">
+          <option>
+            SuperAdmin
+          </option>
+          <option>
+            Hiring Manager
+          </option>
+        </select>
+      </div>
+      <div>
+        <label>Company* :</label><br/>
+        <mdc-select formControlName="companyId">
+          <option *ngFor="let company of companies" [value]="company.value">{{company.description}}</option>
+        </mdc-select>
+      </div>
+      <div>
+        <label>TimeZone*:</label>
+        <select formControlName="userTimeZone">
+          <option>
+            India
+          </option>
+        </select>
+      </div>
+      <div>
+        <label>
+          Auth0 ID:
+        </label>
+        <input type="text" formControlName="auth0Id"/>
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

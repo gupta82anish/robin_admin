@@ -1,0 +1,61 @@
+.container{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+    .left{
+      width: 400px;
+      height: 500px;
+      // margin-left: 200px;
+      div{
+        margin-top: 10px;
+        input{
+          height: 30px;
+          width: 350px;
+        }
+        select{
+          width: 350px;
+        }
+        mdc-select{
+          width: 350px;
+        }
+      }
+      button{
+        margin-top: 10px;
+      }
+    }
+    .right{
+      width: 400px;
+      height: 500px;
+      div{
+        input{
+          height: 30px;
+          width: 350px;
+        }
+        select{
+          width: 350px;
+        }
+        mdc-select{
+          width: 350px;
+        }
+      }
+      button{
+        margin-top: 10px;
+      }
+    }
+    .company-list{
+      width: 200px;
+      height: 500px;
+      li{
+        font-family: Roboto;
+      }
+    }
+    .user-list{
+      width: 200px;
+      height: 500px;
+      li{
+        font-family: Roboto;
+      }
+    }
+  }

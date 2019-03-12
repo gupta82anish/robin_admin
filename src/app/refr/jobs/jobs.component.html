@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <!--<div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+        <label class="p2">All Jobs</label>
+        <div *ngFor="let job of completeJobList | async">
+          <label class="p4">{{job.designation}} | {{job.company_name}}</label>
+          <button (click)="addForReferral(job)" [disabled]='true' class="btn btn-success btn-sm">Add for Referral</button>
+        </div>
+    </div>-->
+    <div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+      <label class="p2">Referral Jobs</label><br>
+      <span *ngIf="!hideSpinner" class="spinner spinner-inline">
+        Loading...
+      </span>
+      <div *ngFor="let job of referralJobList | async">
+        <label class="p4">{{job.designation}} | {{job.companyname}}</label>
+        <button (click)="removeFromReferral(job)" class="btn btn-danger btn-sm">Remove from Referral</button>
+      </div>
+    </div>
+  <!-- </div> -->
+  <!-- <hr> -->
+  <!-- <div class="row"> -->
+    <div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-6">
+      <h3>Add Job For Referral</h3>
+      <form class="clr-form" [formGroup]="jobForm" (ngSubmit)="addJobForRefferal(jobForm.value)">
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Designation</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="designation" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Company Name</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="companyname" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">CTC Range</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="ctcrange" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Location</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="location" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Experience</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="experience" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">College Tier</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="collegetier" class="clr-input">
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Skills</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" formControlName="skills" class="clr-input">
+                    <clr-control-helper>Separate values with commas</clr-control-helper>
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Upload Resume</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                  <div class="custom-file">
+                    <input type="file" (change)="chooseFile($event)" class="custom-file-input" accept="application/msword,application/pdf" formControlName="jd"/>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-2">Upload Logo</label>
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                  <div class="custom-file">
+                    <input type="file" (change)="chooseImageFile($event)" class="custom-file-input" accept="image/jpeg" formControlName="logo"/>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <div class="clr-control-container clr-col-xs-12 clr-col-md-10">
+                <div class="clr-input-wrapper">
+                  <button class="btn btn-primary btn-sm">Post Job!</button>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

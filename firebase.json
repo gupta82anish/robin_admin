@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "target": "robin_admin",
+    "public": "dist/robin-forms",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
