@@ -1,6 +1,0 @@
-projectKey=sonar-angularapp
-serverUrl=http://localhost:9000
-serverVersion=7.6.0.21501
-dashboardUrl=http://localhost:9000/dashboard?id=sonar-angularapp
-ceTaskId=AWkk0tDsc6A5qnD_Jvny
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWkk0tDsc6A5qnD_Jvny
