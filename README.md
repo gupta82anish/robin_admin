@@ -17,6 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng build` project banane ke liye hahhahaha
 Run `ng build` blah blah
 Rub `ng build` hahahaO
+Run `ng build` again
 
 ## Running unit tests
 
